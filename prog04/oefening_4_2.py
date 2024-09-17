@@ -27,6 +27,8 @@ def som(getallenLijst):
         int: De som (optelling) van de getallen in de lijst
     """
     return
+    x = [1,2,3]
+som(x)
 
 
 def development_code():
