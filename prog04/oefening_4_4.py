@@ -30,6 +30,20 @@ def new_password(oldpassword, newpassword):
         bool: True als het nieuwe password voldoet aan de eisen, anders False
     """
     return
+    def new_password ():
+    oud = 'hallo1'
+    new = str(input('Geef aub een wachtwoord: '))
+    if new == oud:
+        print('maak een nieuwe wachtwoord!')
+        return False
+    if len(new) < 6:
+        print('Uw wachtwoord moet minimaal 6 letters hebben!')
+        return False
+    else:
+        print('Uw wachtwoord werd gewijzigd!')
+        return True
+new_password()
+
 
 
 def development_code():
