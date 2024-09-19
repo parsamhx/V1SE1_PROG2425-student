@@ -55,6 +55,44 @@ def ritprijs(leeftijd, weekendrit, afstandKM):
         float: De berekende ritprijs.
     """
     return
+    def standaardprijs(afstandKM):
+    if afstandKM < 0:
+        afstandKM = 0
+    if afstandKM > 50:
+        prijs = 15 + (afstandKM * 0.60) #0.60 cent
+    else:
+        prijs = afstandKM * 0.80 #0.80 cent
+    return prijs
+standaardprijs(20)
+
+
+
+def ritprijs(leeftijd, weekendrit, afstandKM):
+    prijs = standaardprijs(afstandKM)
+
+
+
+    if leeftijd < 12 or leeftijd > 65:
+
+        if weekendrit:
+            korting = 0.35
+        else:
+            korting = 0.30
+    if weekendrit:
+            korting = 0.40
+    else:
+            korting = 0
+
+
+    X = prijs * (1 -korting) # we gebruiken hier 1 want als de weekendrit == False (dus geen sprake van weekend), dan hoeft maar de prijs van staandardprijs te vermenigvuldigen door 1
+    if weekendrit == False:
+        print(f'U bent {leeftijd} jaar oud en het is geen weekend, dus uw ritprijs wordt dan {X} euro!')
+    elif weekendrit == True:
+        print(f'U bent {leeftijd} jaar oud en het is weekend, dus uw ritprijs wordt dan {X} euro!')
+
+    return X
+
+ritprijs(19,True,20)
 
 
 def development_code():
